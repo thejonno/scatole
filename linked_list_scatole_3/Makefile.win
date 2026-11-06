@@ -1,0 +1,31 @@
+# Project: apro_scatole
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = ../prove_2/linked_list_scatole_2/Nuova_cartella_/def_funzioni.o ../prove_2/linked_list_scatole_2/Nuova_cartella_/main.o
+LINKOBJ  = ../prove_2/linked_list_scatole_2/Nuova_cartella_/def_funzioni.o ../prove_2/linked_list_scatole_2/Nuova_cartella_/main.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = apro_scatole.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+../prove_2/linked_list_scatole_2/Nuova_cartella_/def_funzioni.o: ../prove_2/linked_list_scatole_2/Nuova_cartella_/def_funzioni.c
+	$(CC) -c ../prove_2/linked_list_scatole_2/Nuova_cartella_/def_funzioni.c -o ../prove_2/linked_list_scatole_2/Nuova_cartella_/def_funzioni.o $(CFLAGS)
+
+../prove_2/linked_list_scatole_2/Nuova_cartella_/main.o: ../prove_2/linked_list_scatole_2/Nuova_cartella_/main.c
+	$(CC) -c ../prove_2/linked_list_scatole_2/Nuova_cartella_/main.c -o ../prove_2/linked_list_scatole_2/Nuova_cartella_/main.o $(CFLAGS)
